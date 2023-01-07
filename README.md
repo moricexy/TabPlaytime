@@ -1,4 +1,4 @@
-# TabPlaytime
+# Placeholders (since 1.0)
 **{playerName}** - the player name
 <br>**{firstWrap}** the first wrapType
 <br>**{secondWrap}** the second wrapType
