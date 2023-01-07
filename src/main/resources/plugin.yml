@@ -1,0 +1,4 @@
+name: TabPlaytime
+version: '${project.version}'
+main: de.morice.tabplaytime.TabPlaytime
+api-version: 1.19
