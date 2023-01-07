@@ -49,6 +49,15 @@ public class ConfigManager {
             ));
         }
 
+        if (!config.isSet("displayType")) {
+            config.set("displayType", "END");
+            config.setComments("displayType", List.of(
+                    "Where should the playtime stay?",
+                    "Must be END or START (lowercase works too)",
+                    "default: END"
+            ));
+        }
+
         this.plugin.saveConfig();
     }
 
