@@ -72,4 +72,8 @@ public class ConfigManager {
     public String getTimeFormat() {
         return this.plugin.getConfig().getString("timeFormat", "default");
     }
+
+    public String getDisplayType() {
+        return this.plugin.getConfig().getString("displayType", "END");
+    }
 }
