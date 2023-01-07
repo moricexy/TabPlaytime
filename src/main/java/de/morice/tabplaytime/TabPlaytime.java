@@ -84,12 +84,23 @@ public final class TabPlaytime extends JavaPlugin implements Listener {
             default -> throw new IllegalStateException();
         }
 
-        player.setPlayerListName(this.colorize("&7{a} &8{b}{c}&8{d}"
-                .replace("{a}", player.getName())
-                .replace("{b}", "" + first)
-                .replace("{c}", c + time)
-                .replace("{d}", "" + second)
-        ));
+        final String displayType = this.configManager.getDisplayType();
+
+        if (displayType.equalsIgnoreCase("END")) {
+            player.setPlayerListName(this.colorize("&7{a} &8{b}{c}&8{d}"
+                    .replace("{a}", player.getName())
+                    .replace("{b}", "" + first)
+                    .replace("{c}", c + time)
+                    .replace("{d}", "" + second)
+            ));
+        } else {
+            player.setPlayerListName(this.colorize("&8{d} &7{a} &8{b}{c}"
+                    .replace("{a}", player.getName())
+                    .replace("{b}", "" + first)
+                    .replace("{c}", c + time)
+                    .replace("{d}", "" + second)
+            ));
+        }
     }
 
     private String colorize(@NotNull String colorized) {
