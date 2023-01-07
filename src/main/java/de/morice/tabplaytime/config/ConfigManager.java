@@ -49,12 +49,11 @@ public class ConfigManager {
             ));
         }
 
-        if (!config.isSet("displayType")) {
-            config.set("displayType", "END");
-            config.setComments("displayType", List.of(
-                    "Where should the playtime stay?",
-                    "Must be END or START (lowercase works too)",
-                    "default: END"
+        if (!config.isSet("tabFormat")) {
+            config.set("tabFormat", "&7{playerName} &8{firstWrap}{colorAndTime}&8{secondWrap}");
+            config.setComments("tabFormat", List.of(
+                    "The tab format, includes placeholders.",
+                    "View GitHub Page for Placeholders"
             ));
         }
 
@@ -73,7 +72,9 @@ public class ConfigManager {
         return this.plugin.getConfig().getString("timeFormat", "default");
     }
 
-    public String getDisplayType() {
-        return this.plugin.getConfig().getString("displayType", "END");
+    public String getTabFormat() {
+        final String def = "&7{playerName} &8{firstWrap}{colorAndTime}&8{secondWrap}";
+        final FileConfiguration configuration = this.plugin.getConfig();
+        return configuration.getString("tabFormat", def);
     }
 }
